@@ -4,9 +4,9 @@ var lowercase ="abcdefghijklmnopqrstuvwxyz"
 var uppercase ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numbers ="0123456789"
 var specialChars =" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-var candidates =""
-var length = 0 
-var includeLower = false
+var candidates ="l M ! 6"
+var length = 0
+var includeLower 
 var includeUpper = false
 var includeSpecial = false
 var includeNumber = false
@@ -16,31 +16,53 @@ var letter = ""
 var generateBtn = document.querySelector("#generate");
 
   function generatePassword() {
-  var length = window.prompt("enter password length:") 
-  if(length <8 , length > 128);
+  length = window.prompt("Enter password length:") 
+  if(length <8 );
   alert("password should be from 8 to 128 characters long")
   return password;
  }
-  
+
+ includeLower = prompt("Would you like to use lowercase letters?:") 
+ if (includeLower = true ); {
+ letter = lowercase;
+ password = password + letter
  
-/*var password = "password";*/
+ }
+
+ includeUpper = prompt("would you like to use Uppercase letters?:")
+ if (includeLower = true); {
+   letter= uppercase;
+password = password + letter
+ }
+
+
+includeSpecial = prompt("would you like to use a Special character?:")
+if (includeNumber = true); {
+  letter= specialChars
+password= password + letter
+}
+
+
+includeNumber= prompt("would you like to use a Number?:")
+if(includeNumber= true) {
+letter= numbers
+password= password + letter
+}
+
+
+var password = "password"
  
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-
-  /*var password= document.querySelector("#password");*/
+ var password = generatePassword("#password");
+var password= document.querySelector("#generate")
 
   password.value = password;
 
 }
 
 
-includeLower = window.prompt("Would you like to use lowercase letters?:") 
-if (includeLower === true );{
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-password = password + letter
-}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
